@@ -1,0 +1,6 @@
+[submodule "src/armboy-kernel"]
+	path = src/armboy-kernel
+	url = https://github.com/CanadianCommander/armboy-kernel.git
+[submodule "armboy-kernel"]
+	path = armboy-kernel
+	url = https://github.com/CanadianCommander/armboy-kernel.git
