@@ -13,7 +13,7 @@ __binary_layout:
 	.long	__data_end__
   .long __bss_start__
   .long __bss_end__
-  .long 0x400       /* !!! HEAP SIZE !!! */
+  .long 0x32       /* !!! HEAP SIZE !!! */
   .size __binary_layout, . - __binary_layout
 
   .section .jump_vector
@@ -22,9 +22,9 @@ __binary_layout:
 __jump_vector:
 
 	/* jump vectors. replace Default_Handler with you handler as required*/
-  .long Default_Handler // 0
-  .long Default_Handler
-  .long Default_Handler
+  .long initConfigCall  // 0
+  .long initDefaultCall
+  .long getControlStateCall
   .long Default_Handler
   .long Default_Handler
   .long Default_Handler

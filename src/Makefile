@@ -3,7 +3,7 @@ CFLAGS = --std=gnu11 -Ofast  -mlong-calls -fPIC -mno-pic-data-is-text-relative -
 OBYCP = arm-none-eabi-objcopy
 
 INCLUDE = -I ../armboy-kernel/src/ -I ../../../tools/ATMEL -I ../../../tools/CMSIS/include
-CFILES = input.c
+CFILES = input.c inputSyscall.c
 
 input.bin : $(CFILES) kmod.S
 	$(CC) $(CFLAGS) -o input.elf $(CFILES) kmod.S $(INCLUDE)
