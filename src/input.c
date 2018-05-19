@@ -19,7 +19,7 @@ void initConfig(InputConfig * iCon){
 void initDefault(void){
   currentConfig.b1 = toPin(PIO_BANK_C,PIO_PC22,     NULL);
   currentConfig.b2 = toPin(PIO_BANK_C,PIO_PC21,     NULL);
-  currentConfig.b3 = toPin(PIO_BANK_C,PIO_PC29,     NULL);
+  currentConfig.b3 = toPin(PIO_BANK_A,PIO_PC28,     NULL);
   currentConfig.b4 = toPin(PIO_BANK_D,PIO_PD7,      NULL);
 
   currentConfig.dUp = toPin(PIO_BANK_A,PIO_PA16,    NULL);
@@ -48,6 +48,19 @@ static void initPins(void){
 
   enablePin(currentConfig.home.bank, currentConfig.home.pin, PIO_IN);
   enablePin(currentConfig.start.bank, currentConfig.start.pin, PIO_IN);
+
+  setPullup(currentConfig.b1.bank, currentConfig.b1.pin, false);
+  setPullup(currentConfig.b2.bank, currentConfig.b2.pin, false);
+  setPullup(currentConfig.b3.bank, currentConfig.b3.pin, false);
+  setPullup(currentConfig.b4.bank, currentConfig.b4.pin, false);
+
+  setPullup(currentConfig.dUp.bank, currentConfig.dUp.pin,        false);
+  setPullup(currentConfig.dDown.bank, currentConfig.dDown.pin,    false);
+  setPullup(currentConfig.dLeft.bank, currentConfig.dLeft.pin,    false);
+  setPullup(currentConfig.dRight.bank, currentConfig.dRight.pin,  false);
+
+  setPullup(currentConfig.home.bank, currentConfig.home.pin, false);
+  setPullup(currentConfig.start.bank, currentConfig.start.pin, false);
 }
 
 void getControlState(InputState * iState){
